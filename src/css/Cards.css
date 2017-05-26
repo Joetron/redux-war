@@ -1,0 +1,22 @@
+.card {
+	width: 79px;
+	height: 123px;
+	margin: 10px;
+	position: absolute;
+}
+
+.cards {
+	overflow-x: scroll;
+	width: 100%;
+	height: 143px;
+	position: relative;
+}
+
+.deck, .down-stack {
+	width: 100px;
+}
+
+.pile {
+	width: calc(100% - 100px);
+	min-width: 300px;
+}
