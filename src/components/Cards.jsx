@@ -15,7 +15,7 @@ const Cards = ({type, cardData}) => {
 	return (
 		<div className={type + " cards"} >
 			{cardData.images.map((card, index) => (
-					<Card image={card} offset={cardData.offset * index} />
+					<Card key={index} image={card} offset={cardData.offset * index} />
 				)
 			)}
 		</div>

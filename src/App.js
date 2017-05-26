@@ -4,23 +4,11 @@ import './App.css';
 import Cards from './components/Cards.jsx';
 import WarPlayer from './components/WarPlayer.jsx';
 import WarButton from './components/WarButton.jsx';
-
-	
-
-// borrowed from:
-// https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
-// TODO: move to reducer
-function importAll(r) {
-	let images = {};
-	r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-	return images;
-}
-
-const images = importAll(require.context('./images', false, /\.(png)$/));
+import CardImages from './images/CardImages.js';
 
 // Some temporary dummy data to test rendering the components
-const back = images['blue_diamond_back.png'];
-const aceSpades = images['ace_spades.png'];
+const back = CardImages.getBack();
+const aceSpades = CardImages.getCard('ace', 'spades');
 
 const deck = {
 	offset: 2,
@@ -50,7 +38,7 @@ class App extends Component {
 						<WarButton label="start" />
 					</div>
 					<div className="players">
-						{players.map((player) => <WarPlayer player={player} />)}
+						{players.map((player, i) => <WarPlayer key={i} player={player} />)}
 					</div>
 				</div>
 			</div>
