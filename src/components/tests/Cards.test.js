@@ -12,6 +12,13 @@ describe('<Card/>', () => {
 		expect(src.indexOf('back')).not.toBeLessThan(0);
 	});
 
+	it('offsets the card 5px to the left.', function () {
+		const card = mount(<Card offset={5} image={CardImages.getBack()} />);
+		const img = card.find('img');
+		const left = img.node.style.left;
+		expect(left).toEqual('5px');
+	});
+
 	it('renders the ace of spades card.', function () {
 		const card = mount(<Card offset={5} image={CardImages.getCard('ace', 'spades')} />);
 		const img = card.find('img');
