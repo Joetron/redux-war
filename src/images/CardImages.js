@@ -149,6 +149,9 @@ const getCard = (value, suit) => {
 	return valKey && suitKey ? images[valKey + suitKey] : back;
 }
 
+/**
+ * @return {String} url - the rl for the back of the card
+ */
 const getBack = () => back;
 
 const CardImages = {
