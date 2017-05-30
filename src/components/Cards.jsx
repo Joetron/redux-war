@@ -13,21 +13,25 @@ import '../css/Cards.css';
   * @return {React.Component} Cards
   */
 const Cards = ({type, cardData}) => {
-	return (
-		<div className={type + " cards"} >
-			{cardData.images.map((card, index) => (
-					<Card key={index} image={card} offset={cardData.offset * index} />
-				)
-			)}
-		</div>
-	);
+return (
+        <div className={type + " cards"} >
+            {cardData.images.map((card, index) => (
+                    <Card 
+                        key={index} 
+                        image={card} 
+                        offset={cardData.offset * index}
+                    />
+                )
+            )}
+        </div>
+    );
 };
 
 Cards.propTypes = {
     cardData: PropTypes.shape({
-    	images: PropTypes.array.isRequired,
-    	offset: PropTypes.number.isRequired
-    }).isRequired,
+            images: PropTypes.array.isRequired,
+            offset: PropTypes.number.isRequired
+        }).isRequired,
     type: PropTypes.string.isRequired
 };
 
