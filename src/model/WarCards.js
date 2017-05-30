@@ -43,6 +43,14 @@ const ranks = [
 	Values.ACE
 ];
 
+/**
+ * Creates a new war card with the given value and suit face down and
+ * assigns it the proper ranking.
+ *
+ * @param {String} value
+ * @param {String} suit
+ * @return {Object} card
+ */
 export function createCard(value, suit) {
 	return {
 		rank: ranks.indexOf(value),
@@ -52,6 +60,11 @@ export function createCard(value, suit) {
 	};
 }
 
+/**
+ * Creates a new array of cards to be used in war.
+ *
+ * @return {Array} cards
+ */
 export function createDeck() {
 	let cards = [];
 	
@@ -64,17 +77,34 @@ export function createDeck() {
 	return cards;
 } 
 
+/**
+ * Copies an array of war cards created using createCard.
+ *
+ * @param {Array} cards
+ * @return {Array} cardsCopy
+ */
 export function copyCards(cards) {
 	return cards.map((card) => Object.assign({}, card, {}));
 }
 
-export function shuffle(cards) {
-	for (let i = cards.length; i; i--) {
+/**
+ * Does an in place fisher yates shuffle of an array.
+ *
+ * @param {Array} array
+ */
+export function shuffle(array) {
+	for (let i = array.length; i; i--) {
         let j = Math.floor(Math.random() * i);
-        [cards[i - 1], cards[j]] = [cards[j], cards[i - 1]];
+        [array[i - 1], array[j]] = [array[j], array[i - 1]];
     }
 }
 
+/**
+ * Copies an array of war cards created using createCard.
+ *
+ * @param {Array} cards
+ * @return {Array} cardsCopy
+ */
 export function copyShuffle(deck) {
 	const deckCopy = copyCards(deck);
 	shuffle(deckCopy);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Player from './Player.jsx';
 
 /**
@@ -13,5 +14,9 @@ const Players = ({players}) => (
 		{players.map((player, i) => <Player key={i} player={player} />)}
 	</div>
 );
+
+Players.propTypes = {
+    players: PropTypes.array.isRequired
+};
 
 export default Players;

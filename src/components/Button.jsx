@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/Button.css';
 
 /**
@@ -12,5 +13,10 @@ import '../css/Button.css';
 const Button = ({onButtonClick, label}) => (
 	<button className="button" onClick={onButtonClick} >{label}</button>
 );
+
+Button.propTypes = {
+    onButtonClick: PropTypes.func.isRequired,
+    label: PropTypes.string.isRequired
+};
 
 export default Button;

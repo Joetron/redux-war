@@ -1,3 +1,7 @@
+/**
+ * CardImages imports all of the cards used in war and creates getter functions
+ * for mapping card data to the proper card images.
+ */
 import back from './blue_diamond_back.png';
 import aceClubs from './ace_clubs.png';
 import aceDiamonds from './ace_diamonds.png';

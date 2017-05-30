@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card.jsx';
 import '../css/Cards.css';
 
@@ -20,6 +21,14 @@ const Cards = ({type, cardData}) => {
 			)}
 		</div>
 	);
-}
+};
+
+Cards.propTypes = {
+    cardData: PropTypes.shape({
+    	images: PropTypes.array.isRequired,
+    	offset: PropTypes.number.isRequired
+    }).isRequired,
+    type: PropTypes.string.isRequired
+};
 
 export default Cards;

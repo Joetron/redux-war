@@ -3,6 +3,12 @@ import Button from '../components/Button.jsx';
 import GameState from '../model/GameState.js';
 import { onWarButtonClick } from '../actions';
 
+/**
+ * Maps the current gameState to the proper label for the button
+ *
+ * @param {Object} state
+ * @return {Object} label
+ */
 const mapStateToProps = (state) => {
 	let label = state.war.gameState;
 	
@@ -34,9 +40,16 @@ const mapStateToProps = (state) => {
 	return { label };	
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+/**
+ * Maps dispatch to send a war button click action when the buttons
+ * onButtonClick is fired.
+ *
+ * @param {Function} dispatch
+ * @return {Object} onButtonClick
+ */
+const mapDispatchToProps = (dispatch,) => {
 	return {
-		onButtonClick: (gameState) => { dispatch(onWarButtonClick()); }
+		onButtonClick: () => { dispatch(onWarButtonClick()); }
 	}
 };
 

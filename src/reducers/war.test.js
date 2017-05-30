@@ -3,7 +3,7 @@ import GameState from '../model/GameState.js';
 import { Facing, Values, Suits } from '../model/WarCards.js';
 import war from './war.js';
 
-describe('war.js', () => {
+describe('war reducer', () => {
 	// Reuse so we don't have to recreate states for all of the tests.
 	// For scenario driven tests we'll create mock data.
 	let state;

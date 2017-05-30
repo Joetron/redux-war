@@ -1,12 +1,13 @@
 This is the [card game war](https://en.wikipedia.org/wiki/War_(card_game)) created with [Create React App](https://github.com/facebookincubator/create-react-app) and react-redux.
 
 ## Variant
+The rules of War are unclear about what happens when a player runs out of cards during war. As such, there are several variants of war with different rules for that situation. The rules for this variant are:
 
 * When a player runs out of cards during war, they lose.
 * When all players in a war run out of cards, they all lose.
-  * If this war started from a previous war, then the top player(s) from that war continue to play for the cards in the piles.
-  * If there are still survivors, then the top player(s) from the battle play for cards in the piles.
-  * If there are no players left, the game ends in a tie.
+  * If this war started from a previous war, then the top player(s) from that war continue play.
+  * If this war started from a battle and there are still survivors, then the top player(s) from the battle play for cards in the piles.
+  * If there are no players left at all, the game ends in a tie.
   * If play does resume, the "dead" players piles stay on the table and go to the next battle/war winner.
 
 ## Create React App Information

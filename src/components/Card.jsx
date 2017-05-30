@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Renders a Card as as an img using the provided src.
@@ -15,5 +16,13 @@ const Card = ({image, offset}) => (
 		style={{left: offset}}
 	/>
 );
+
+Card.propTypes = {
+    image: PropTypes.shape({
+    	src: PropTypes.string.isRequired,
+    	alt: PropTypes.string.isRequired
+    }).isRequired,
+    offset: PropTypes.number.isRequired
+};
 
 export default Card;

@@ -24,7 +24,7 @@ import { createPlayers, copyPlayers } from '../model/WarPlayer.js';
  * VARIANT:
  * - In this variant a player who runs out of cards during war loses.
  * - If all players run out of cards during war, then it falls back to the
- *   remaining players battle cards. If there are no remaining players,
+ *   remaining players war/battle cards. If there are no remaining players,
  *   then the game ends in a tie since no one won. 
  *
  * https://en.wikipedia.org/wiki/War_(card_game)

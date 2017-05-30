@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Cards from './Cards.jsx';
 import '../css/Player.css';
 
@@ -15,5 +16,12 @@ const Player = ({player}) => (
 		<Cards type="pile" cardData={player.pile} />
 	</div>
 );
+
+Player.propTypes = {
+    player: PropTypes.shape({
+    	downStack: PropTypes.array.isRequired,
+    	pile: PropTypes.array.isRequired
+    }).isRequired
+};
 
 export default Player;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/TextInfo.css';
 
 /**
@@ -10,5 +11,9 @@ import '../css/TextInfo.css';
 const TextInfo = ({text}) => (
 	<div className='text-info'>{text}</div>
 );
+
+TextInfo.propTypes = {
+    text: PropTypes.string
+};
 
 export default TextInfo;
