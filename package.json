@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
+    "gh-pages": "^1.0.0",
     "react-dom": "^15.5.4",
     "react-scripts": "^1.0.6",
     "react-test-renderer": "^15.5.4"
@@ -19,6 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://joetron.github.io/redux-war/"
 }
