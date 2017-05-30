@@ -1,19 +1,19 @@
 import React from 'react';
 import Cards from './Cards.jsx';
-import '../css/WarPlayer.css';
+import '../css/Player.css';
 
 /**
  * Renders a players downstack and pile.
  * The pile is a combination of the battle reveal plus any war cards.
  *
  * @param {Object} player 
- * @return {React.Component} WarPlayer
+ * @return {React.Component} Player
  */
-const WarPlayer = ({player}) => (
-	<div className="war-player">
+const Player = ({player}) => (
+	<div className="player">
 		<Cards type="down-stack" cardData={player.downStack} />
 		<Cards type="pile" cardData={player.pile} />
 	</div>
 );
 
-export default WarPlayer;
+export default Player;

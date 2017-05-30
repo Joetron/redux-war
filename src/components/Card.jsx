@@ -9,8 +9,9 @@ import React from 'react';
  */
 const Card = ({image, offset}) => (
 	<img 
+		alt={image.alt}
 		className="card" 
-		src={image} 
+		src={image.src} 
 		style={{left: offset}}
 	/>
 );

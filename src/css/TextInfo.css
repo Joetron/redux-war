@@ -1,0 +1,12 @@
+.text-info {
+	background-color: black;
+    padding: 20px;
+    margin: 20px auto;
+    width: 154px;
+	height: 154px;
+    border-style: ridge;
+    border-width: 3px;
+    color: white;
+    overflow-x: scroll;
+    text-align: left;
+}

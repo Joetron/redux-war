@@ -13,10 +13,11 @@
 }
 
 .deck, .down-stack {
-	width: 100px;
+	margin: 0px auto;
+	width: 152px;
 }
 
 .pile {
-	width: calc(100% - 100px);
-	min-width: 300px;
+	width: calc(100% - 152px);
+	min-width: 348px;
 }

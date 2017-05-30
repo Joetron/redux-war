@@ -51,6 +51,7 @@ import twoClubs from './two_clubs.png';
 import twoDiamonds from './two_diamonds.png';
 import twoHearts from './two_hearts.png';
 import twoSpades from './two_spades.png';
+import { Values, Suits } from '../model/WarCards.js';
 
 const images = {
 	back,
@@ -111,48 +112,54 @@ const images = {
 /**
  * Returns a card image given from the imported cards images
  * given a value and suit.
- * To retrieve the back of card pass no arguments.
- * @param (String) value - the named value of a card
- * @param (String) suit - the named suit of a card
+ * In the event of an error it returns the back of the card.
+ * However, getBack should be used explicitly to get the back.
+ *
+ * @param (Object) card - a card that should have a valid value and suit
  * @return (String) url - the url of the card
  */
-const getCard = (value, suit) => {
-	var valKey, suitKey;
+export const getCard = (card) => {
+	const { value, suit } = card;
+	let valKey, suitKey;
 
 	switch(value) {
-		case 'ace':
-		case 'two':
-		case 'three':
-		case 'four':
-		case 'five':
-		case 'six':
-		case 'seven':
-		case 'eight':
-		case 'nine':
-		case 'ten':
-		case 'jack':
-		case 'queen':
-		case 'king':
+		case Values.ACE:
+		case Values.TWO:
+		case Values.THREE:
+		case Values.FOUR:
+		case Values.FIVE:
+		case Values.SIX:
+		case Values.SEVEN:
+		case Values.EIGHT:
+		case Values.NINE:
+		case Values.TEN:
+		case Values.JACK:
+		case Values.QUEEN:
+		case Values.KING:
 			valKey = value;
 			break;
+		default:
+			valKey = false;
 	}
 
 	switch(suit) {
-		case 'hearts':
-		case 'diamonds':
-		case 'spades':
-		case 'clubs':
+		case Suits.HEARTS:
+		case Suits.DIAMONDS:
+		case Suits.SPADES:
+		case Suits.CLUBS:
 			suitKey = suit.charAt(0).toUpperCase() + suit.slice(1);
 			break;
+		default:
+			suitKey = false;
 	}
 
 	return valKey && suitKey ? images[valKey + suitKey] : back;
 }
 
 /**
- * @return {String} url - the rl for the back of the card
+ * @return {String} url - the url for the back of the card
  */
-const getBack = () => back;
+export const getBack = () => back;
 
 const CardImages = {
 	getCard, getBack

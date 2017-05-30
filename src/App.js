@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
 import logo from './war_doge.png';
 import './App.css';
-import Cards from './components/Cards.jsx';
-import WarPlayer from './components/WarPlayer.jsx';
-import WarButton from './components/WarButton.jsx';
-import CardImages from './images/CardImages.js';
-
-// Some temporary dummy data to test rendering the components
-const back = CardImages.getBack();
-const aceSpades = CardImages.getCard('ace', 'spades');
-
-const deck = {
-	offset: 2,
-	images: [ back, back, back ]
-};
-
-const pile = {
-	offset: 20,
-	images: [ aceSpades, back, aceSpades ]
-};
-
-const player = {downStack: deck, pile: pile};
-const players = [player, player, player];
-const onClick = () => {};
+import Deck from './containers/Deck.js';
+import GameButton from './containers/GameButton.js';
+import WarPlayers from './containers/WarPlayers.js';
+import Messenger from './containers/Messenger.js';
 
 class App extends Component {
 	render() {
@@ -30,16 +12,19 @@ class App extends Component {
 			<div className="App">
 				<div className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
-					<h2>Welcome to War!</h2>
+					<h2>WAR!</h2>
 				</div>
-				<div className="war">
-					<div>
-						<Cards type="deck" cardData={deck} />
-						<WarButton label="start" />
+				<div className="App-content">
+					<div className="side-spacer spacer-left" />
+					<div className="war">
+						<div className="war-panel">
+							<Deck />
+							<GameButton />
+							<Messenger />
+						</div>
+						<WarPlayers />
 					</div>
-					<div className="players">
-						{players.map((player, i) => <WarPlayer key={i} player={player} />)}
-					</div>
+					<div className="side-spacer spacer-right" />
 				</div>
 			</div>
 		);
