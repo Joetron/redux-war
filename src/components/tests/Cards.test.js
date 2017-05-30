@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import Card from '../Card.jsx';
 import Cards from '../Cards.jsx';
 import CardImages from '../../images/CardImages.js';
-import logo from '../../war_doge.png';
 import { createCard, Values, Suits } from '../../model/WarCards.js';
 
 describe('<Card/>', () => {
