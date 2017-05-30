@@ -6,7 +6,8 @@
  * As such, we'll have only one action, the war button click.
  */
 const ActionTypes = {
-	WAR_BUTTON_CLICK: 'war_button_click'
+	WAR_BUTTON_CLICK: 'war_button_click',
+	SET_NUMBER_OF_PLAYERS: 'set_number_of_players'
 }
 
 export default ActionTypes;

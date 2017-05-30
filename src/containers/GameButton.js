@@ -47,7 +47,7 @@ const mapStateToProps = (state) => {
  * @param {Function} dispatch
  * @return {Object} onButtonClick
  */
-const mapDispatchToProps = (dispatch,) => {
+const mapDispatchToProps = (dispatch) => {
 	return {
 		onButtonClick: () => { dispatch(onWarButtonClick()); }
 	}

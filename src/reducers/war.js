@@ -29,13 +29,19 @@ import { createPlayers, copyPlayers } from '../model/WarPlayer.js';
  *
  * https://en.wikipedia.org/wiki/War_(card_game)
  */
+
+// TODO: create a game model for some of these objects.
+export const MIN_PLAYERS = 2;
+export const MAX_PLAYERS = 4;
+
 const initialState = {
 	gameState: GameState.START,
 	deck: createDeck(),			
 	players: [],					// array of player objects
 	survivors: [],					// array of player indexes who are still in the game
 	warMongers: [],					// array of player indexes with highest cards each round
-	roundWinner: -1
+	roundWinner: -1,
+	numberOfPlayers: MIN_PLAYERS
 };
 
 /**
@@ -48,8 +54,8 @@ const initialState = {
  * @param {Number} numPlayers - the number of players to create, no more than the deck size
  * @preturn {Object} nextState
  */
-function startGame(state, numPlayers) { 
-	const players = createPlayers(Math.min(numPlayers, state.deck.length));
+function startGame(state) { 
+	const players = createPlayers(state.numberOfPlayers);
 	return Object.assign({}, state, {
 		players,
 		survivors: players.map((player, index) => { return index; }),
@@ -387,6 +393,23 @@ function play(state) {
 	}
 }
 
+function setNumberOfPlayers(state, payload) {
+	let numberOfPlayers;
+	if (!payload) {
+		numberOfPlayers = MIN_PLAYERS;
+	} else if (payload.numberOfPlayers !== payload.numberOfPlayers) {
+		numberOfPlayers = MIN_PLAYERS;
+	} else if (payload.numberOfPlayers < MIN_PLAYERS) {
+		numberOfPlayers = MIN_PLAYERS;
+	} else if (payload.numberOfPlayers > MAX_PLAYERS) {
+		numberOfPlayers = MAX_PLAYERS;
+	} else {
+		numberOfPlayers = payload.numberOfPlayers;
+	}
+
+	return Object.assign({}, state, { numberOfPlayers });
+}
+
 /**
  * The entry point to this reducer
  *
@@ -398,6 +421,8 @@ function war(state = initialState, action) {
 	switch (action.type) {
 		case ActionTypes.WAR_BUTTON_CLICK:
 			return play(state);
+		case ActionTypes.SET_NUMBER_OF_PLAYERS:
+			return setNumberOfPlayers(state, action.payload);
 		default:
 			return state;
 	}

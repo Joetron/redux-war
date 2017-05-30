@@ -21,4 +21,4 @@ describe('<Button/>', () => {
         const { enzymeWrapper } = setup();
         expect(enzymeWrapper.find('button').hasClass('button')).toBe(true);
     });
-})
+});

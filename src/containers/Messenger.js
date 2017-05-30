@@ -32,17 +32,7 @@ const mapStateToProps = (state) => {
 	switch (state.war.gameState) {
 		case GameState.START:
 			// TODO: move to a RulesComponent
-			text = 'Welcome to war! Cards are dealt until deck is gone. ' + 
-			       'Each player then lays down one battle card. ' +
-			       'The person who has the highest battle card collects all played cards. ' + 
-			       'Cards are ranked highest to lowest: A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1. ' +
-			       'In the event of a tie, the players who tied go to war. ' +
-			       'In war each player plays one card face down, then one face up. ' +
-			       'The player with the highest face up card collects all the played cards. ' +
-			       'If there is another tie, then another round of war is played. ' + 
-			       'If a player cannot play a card during war, then they automatically lose. ' +
-			       'If all players lose during war, then play falls back to the remaining survivors. ' +
-			       'The last person to survive wins!!' ;
+			text = 'Select the number of players then click "Start Game"' ;
 			break;
 		case GameState.DEAL:
 			text = 'The deck is shuffled.';
