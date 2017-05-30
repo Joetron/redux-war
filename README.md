@@ -9,6 +9,8 @@ This is the [card game war](https://en.wikipedia.org/wiki/War_(card_game)) creat
   * If there are no players left, the game ends in a tie.
   * If play does resume, the dead players piles stay on the table and go to the next battle/war winner.
 
+## Create React App Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
