@@ -19,8 +19,14 @@ const Player = ({player}) => (
 
 Player.propTypes = {
     player: PropTypes.shape({
-    	downStack: PropTypes.array.isRequired,
-    	pile: PropTypes.array.isRequired
+    	downStack: PropTypes.shape({
+	    	offset: PropTypes.number.isRequired,
+	    	images: PropTypes.array.isRequired
+	    }).isRequired,
+    	pile: PropTypes.shape({
+	    	offset: PropTypes.number.isRequired,
+	    	images: PropTypes.array.isRequired
+	    }).isRequired
     }).isRequired
 };
 
